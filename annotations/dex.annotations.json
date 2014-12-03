@@ -1,0 +1,202 @@
+[
+    {
+        "s": "0x0",
+        "e": "0x7",
+        "d": "Magic Number, always 'DEX\\n035\\0'"
+    },
+    {
+        "s": "0x8",
+        "e": "0xb",
+        "d": "Adler32 checksum of whole file apart from the first 12 bytes."
+    },
+    {
+        "s": "0xc",
+        "e": "0x1f",
+        "d": "SHA-1 signature of the rest of the file. (Useless.)"
+    },
+    {
+        "s": "0x20",
+        "e": "0x23",
+        "d": "File size (0x1b0 = 432 bytes)"
+    },
+    {
+        "s": "0x24",
+        "e": "0x27",
+        "d": "Header size (will always be 0x70 = 112 bytes)"
+    },
+    {
+        "s": "0x28",
+        "e": "0x2b",
+        "d": "Endianness tag"
+    },
+    {
+        "s": "0x2c",
+        "e": "0x2f",
+        "d": "Link section size"
+    },
+    {
+        "s": "0x30",
+        "e": "0x33",
+        "d": "Link section offset"
+    },
+    {
+        "s": "0x34",
+        "e": "0x37",
+        "d": "Map section offset, starts at 0x128"
+    },
+    {
+        "s": "0x38",
+        "e": "0x3b",
+        "d": "Number of StringIDs, 5"
+    },
+    {
+        "s": "0x3c",
+        "e": "0x3f",
+        "d": "Offset to StringIDs table, 0x70"
+    },
+    {
+        "s": "0x40",
+        "e": "0x43",
+        "d": "Number of TypeIDs, 3"
+    },
+    {
+        "s": "0x44",
+        "e": "0x47",
+        "d": "Offset to TypeIDs table, 0x84"
+    },
+    {
+        "s": "0x48",
+        "e": "0x4b",
+        "d": "Number of ProtoIDs, 1"
+    },
+    {
+        "s": "0x4c",
+        "e": "0x4f",
+        "d": "Offset to ProtoIDs table, 0x90"
+    },
+    {
+        "s": "0x50",
+        "e": "0x53",
+        "d": "Number of FieldIDs, 0"
+    },
+    {
+        "s": "0x54",
+        "e": "0x57",
+        "d": "Offset to FieldIDs table, 0x0"
+    },
+    {
+        "s": "0x58",
+        "e": "0x5b",
+        "d": "Number of MethodIDs, 2"
+    },
+    {
+        "s": "0x5c",
+        "e": "0x5f",
+        "d": "Offset to MethodIDs table, 0x9c"
+    },
+    {
+        "s": "0x60",
+        "e": "0x63",
+        "d": "Number of ClassDefs, 1"
+    },
+    {
+        "s": "0x64",
+        "e": "0x67",
+        "d": "Offset to ClassDefs table, 0xac"
+    },
+    {
+        "s": "0x68",
+        "e": "0x6b",
+        "d": "Data section size, bytes"
+    },
+    {
+        "s": "0x6c",
+        "e": "0x6f",
+        "d": "Data section offset, starts at 0xcc"
+    },
+    {
+        "s": "0x70",
+        "e": "0x73",
+        "d": "StringID 0, pointing to StringData at 0xe4 (\"<init>\")"
+    },
+    {
+        "s": "0x74",
+        "e": "0x77",
+        "d": "StringID 1, pointing to StringData at 0xec (\"LSmall;\")"
+    },
+    {
+        "s": "0xac",
+        "e": "0xaf",
+        "d": "((Start of the solitary ClassDef)) Index into the TypeID table for this class."
+    },
+    {
+        "s": "0xb0",
+        "e": "0xb3",
+        "d": "Access flags for defined class."
+    },
+    {
+        "s": "0xb4",
+        "e": "0xb7",
+        "d": "Index into the TypeID table for the super class of this class. (java.lang.Object)"
+    },
+    {
+        "s": "0xbc",
+        "e": "0xbf",
+        "d": "Index into the StringID table for the name of the source file of this class."
+    },
+    {
+        "s": "0xc4",
+        "e": "0xc7",
+        "d": "Offset to the ClassData item for this ClassDef, at 0x11d"
+    },
+    {
+        "s": "0xe4",
+        "e": "0xe4",
+        "d": "string.length of this StringData, 6"
+    },
+    {
+        "s": "0xe5",
+        "e": "0xea",
+        "d": "\"<init>\" StringData"
+    },
+    {
+        "s": "0xeb",
+        "e": "0xeb",
+        "d": "null character that comes at the end of every String"
+    },
+    {
+        "s": "0xec",
+        "e": "0xec",
+        "d": "string.length of this StringData, 7"
+    },
+    {
+        "s": "0xed",
+        "e": "0xf3",
+        "d": "\"LSmall;\" StringData"
+    },
+    {
+        "s": "0xf4",
+        "e": "0xf4",
+        "d": "null character that comes at the end of every String"
+    },
+    {
+        "s": "0x11d",
+        "e": "0x11d",
+        "d": "((Start of the solitary ClassData)) Number of static fields this class has."
+    },
+    {
+        "s": "0x11e",
+        "e": "0x11e",
+        "d": "Number of instance fields this class has."
+    },
+    {
+        "s": "0x11f",
+        "e": "0x11f",
+        "d": "Number of direct methods this class has."
+    },
+    {
+        "s": "0x120",
+        "e": "0x120",
+        "d": "Number of virtual methods this class has."
+    }
+]

@@ -1,0 +1,53 @@
+body {
+  background-color: #F5F5F5;
+  color: #83A1B6;
+}
+.title {
+  font-family: sans-serif;
+  font-size: 20pt;
+}
+
+.code_view{
+  font-family:monospace;
+  font-size:14pt;
+  float:left;
+  margin-bottom: 2rem;
+}
+
+.annotation{
+  font-family:monospace;
+  font-size:12pt;
+  width:350px;
+  float:right;
+}
+
+.line{
+  margin-top: .25rem;
+}
+
+.byte{
+  padding: 0 .25rem;
+  margin-left: .25rem;
+}
+
+.word{
+  padding-left: .5rem;
+}
+
+.data{
+  padding-left: .75rem;
+}
+
+.byte.annotated{
+  background-color: #C7D0D5;
+  cursor: pointer;
+}
+
+.byte.hover{
+  background-color: #B7C0C5;
+}
+
+.byte.clicked {
+  background-color: #FF9900;
+}
+

@@ -29,12 +29,11 @@ var getText = function getText(){
           .classed('address', true)
           .text(function(d){ return d.address; });
 
-      var firstHalf = line
+      var lineContent = line
         .append('span')
-          .classed('first', true)
-          .classed('word', true)
+          .classed('content', true)
         .selectAll('span.byte')
-          .data(function(d){ return d.firstHalf; })
+          .data(function(d){ return d.all; })
         .enter().append('span')
           .classed('byte', true)
           .classed('annotated', function(d, i){
@@ -62,47 +61,6 @@ var getText = function getText(){
             }
           })
           .text(function(d){ return d.text; });
-
-      // Second Half. This needs to be done without all that repetition.
-      var secondHalf = line
-        .append('span')
-          .classed('second', true)
-          .classed('word', true)
-        .selectAll('span.byte')
-          .data(function(d){ return d.secondHalf; })
-        .enter().append('span')
-          .classed('byte', true)
-          .classed('annotated', function(d, i){
-            return d.annotations.length > 0;
-          })
-          .attr('data-annotation-id', function(d, i){
-            if (d.annotations.length > 0){
-              return d.annotations[0].idx;
-            }
-          })
-          .on('mouseover', function(d, i){
-            if (d.annotations.length > 0){
-              var idx = d.annotations[0].idx;
-              $('.annotation').html(annotations[idx].d);
-              $('.byte').removeClass('hover');
-              $('[data-annotation-id=' + idx + ']').addClass('hover');
-            }
-          })
-          .on('mousedown', function(d, i){
-            if (d.annotations.length > 0){
-              var idx = d.annotations[0].idx;
-              $('.annotation').html(annotations[idx].d);
-              $('.byte').removeClass('clicked');
-              $('[data-annotation-id=' + idx + ']').addClass('clicked');
-            }
-          })
-          .text(function(d){ return d.text; });
-
-      line
-        .append('span')
-          .classed('data', true)
-          .text(function(d) { return d.data; });
-
     }
   });
 };
@@ -114,7 +72,6 @@ function parseLine(line) {
     return undefined;
   }
   l.address = elems[0];
-  // l.first = elems[1];
   l.firstHalf = elems[1].split(' ').map(function(d, i){
     tempD = {
       text: d,
@@ -122,7 +79,6 @@ function parseLine(line) {
     };
     return tempD;
   });
-  // l.second = elems[2];
   l.secondHalf = elems[2].split(' ').map(function(d, i){
     tempD = {
       text: d,
@@ -130,6 +86,8 @@ function parseLine(line) {
     };
     return tempD;
   });
+  var newArray = $.merge([], l.firstHalf);
+  l.all = $.merge(newArray, l.secondHalf);
   l.data = elems[3];
   if (elems.length > 4) {
     var i = 4;

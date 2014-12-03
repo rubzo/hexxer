@@ -25,9 +25,15 @@ body {
   margin-top: .25rem;
 }
 
+
+
 .byte{
   padding: 0 .25rem;
   margin-left: .25rem;
+}
+
+.byte:nth-child(9){
+  margin-left: 1rem;
 }
 
 .word{

@@ -47,7 +47,6 @@ var getText = function getText(){
           .on('mouseover', function(d, i){
             if (d.annotations.length > 0){
               var idx = d.annotations[0].idx;
-              $('.annotation').html(annotations[idx].d);
               $('.byte').removeClass('hover');
               $('[data-annotation-id=' + idx + ']').addClass('hover');
             }

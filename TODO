@@ -1,0 +1,25 @@
+TODO LIST
+
+ - pointing at shit
+ - automatic value decoding
+ - colours
+ - design
+ - lighting up character view with byte view
+ - multiple annotation layers
+ - sub byte annotations
+
+Notes on multiple layers:
+you'd explicitly assign them to layers
+and if your annotation is contained within an annotation of a higher layer
+you'd print out its description as well
+so for instance, you see the two annotations starting at 0x70
+StringID0 and StringID 1
+you could define an annotation that contains all the StringIDs
+on a higher layer
+and call it "StringIDTable"
+and then the description you see would say something like
+  StringID 0, pointing to StringData at 0xe4 ("<init>")
+  part of: StringID Table
+and then you just make a constraint that annotations with the same layer level cannot overlap.
+so at the JSON level, you just add a layer level to each annotation
+and the rest of the work is done in presentation
